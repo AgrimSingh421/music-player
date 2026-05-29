@@ -50,6 +50,7 @@ const Player = () => {
   };
 
   const startProgress = () => {
+    setIsPlaying(true);
     audioPlayer.addEventListener("timeupdate", () => {
       const minute = Math.floor(audioPlayer.currentTime / 60);
       const second = Math.floor(audioPlayer.currentTime % 60);
@@ -101,7 +102,7 @@ const Player = () => {
             className="audioPlayer"
             onEnded={() => playNextSong()}
             id="audioPlayer"
-            onPlay={() => (setIsPlaying(true), startProgress())}
+            onPlay={() => startProgress()}
             onPause={() => setIsPlaying(false)}
           ></audio>
           <div className="audioControls">
