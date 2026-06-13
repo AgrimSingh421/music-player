@@ -14,6 +14,9 @@ const SongCard = ({
 }) => {
   return (
     <div class="song" id={id}>
+      <div className="songIndex">
+        <span>{index < 10 ? `0${index}` : index}.</span>
+      </div>
       <div class="song_thumbnail">
         <NavLink to={link}>
           <img src={cover} alt="" />

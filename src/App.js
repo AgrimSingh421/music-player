@@ -31,6 +31,9 @@ function App() {
             element={
               <>
                 <div className="searchFields">
+                  {/* <button className="noVirus">
+                    Click me (no virus; mummy kasam)
+                  </button> */}
                   <input
                     type="text"
                     placeholder="Search for any song"
@@ -41,7 +44,7 @@ function App() {
                 <div className="allSongs" style={{ marginTop: "80px" }}>
                   {filteredSongs.length > 0 ? (
                     filteredSongs.map((song) => (
-                      <NavLink to={song.link} className="songLink">
+                      <NavLink to={song.link} className="songLink" id={song.id}>
                         <SongCard
                           key={song.id}
                           id={song.id}
